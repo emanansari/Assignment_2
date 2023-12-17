@@ -9,7 +9,7 @@ class CodeMaker:
     def generate_code(self):
         return ''.join(random.choice(self.initials) for _ in range(4))
 
-    def provide_feedback(self, guess): 
+    def provide_feedback(self, guess):
         correct_positions = sum(g == c for g, c in zip(guess, self.code))
         code_copy = list(self.code)
 
