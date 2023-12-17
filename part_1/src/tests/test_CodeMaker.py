@@ -14,6 +14,15 @@ class TestCodeMaker(unittest.TestCase):
         code = self.code_maker.generate_code()
         self.assertEqual(len(code), 4)
 
+    def test_feedback_accuracy(self):
+        code_maker = CodeMaker()
+        code_maker.code = ['R', 'G', 'B', 'Y']
+        guess = ['R', 'G', 'B', 'Y']
+        feedback = code_maker.provide_feedback(guess)
+        expected_feedback = (4, 0)
+        feedback_msg = "4 correct guesses at right position, 0 at wrong."
+        self.assertEqual(feedback, expected_feedback, feedback_msg)
+
 
 if __name__ == '__main__':
     unittest.main()
