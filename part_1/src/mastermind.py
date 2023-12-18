@@ -48,3 +48,6 @@ class Game:
         self.code_maker = CodeMaker()
         self.code_breaker = CodeBreaker()
         self.attempts = 0
+
+    def play_round(self):
+        raise NotImplementedError("play_round method not implemented")
