@@ -52,5 +52,7 @@ class Game:
     def play_round(self):
         self.attempts = 10
 
-    def display_feedback(self):
-        pass
+    def display_feedback(self, attempt, guess, feedback):
+        print(f"\nAttempt #{attempt}:")
+        print(f"Guess: {guess}")
+        print(f"Feedback: {feedback}")
