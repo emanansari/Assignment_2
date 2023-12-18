@@ -25,11 +25,11 @@ class TestCodeMaker(unittest.TestCase):
 
     def test_incorrect_guess_feedback(self):
         code_maker = CodeMaker()
-        code_maker.code = ['Y', 'Y', 'Y', 'R']
+        code_maker.code = ['R', 'Y', 'Y', 'R']
         guess = ['R', 'G', 'B', 'Y']
         feedback = code_maker.provide_feedback(guess)
-        expected_feedback = (0, 2)
-        feedback_msg = "0 correct guesses at right position, 1 at wrong."
+        expected_feedback = (1, 0)
+        feedback_msg = "1 correct guesses at right position, 3 at wrong."
         self.assertEqual(feedback, expected_feedback, feedback_msg)
 
 
