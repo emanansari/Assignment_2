@@ -1,7 +1,6 @@
 import unittest
 import os
 import sys
-from unittest.mock import patch
 sys.path.append(os.path.join(os.getcwd(), 'part_1/src'))
 from mastermind import Game, CodeBreaker, CodeMaker
 
