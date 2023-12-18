@@ -44,4 +44,5 @@ class CodeBreaker:
 
 
 class Game:
-    pass
+    def __init__(self):
+        raise NotImplementedError("Constructor not implemented")
