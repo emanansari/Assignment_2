@@ -29,7 +29,11 @@ class CodeMaker:
 
 
 class CodeBreaker:
-    pass
+    def __init__(self):
+        self.last_guess = None
+
+    def make_guess(self, guess):
+        self.last_guess = guess
 
 
 class Game:
