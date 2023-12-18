@@ -51,3 +51,6 @@ class Game:
 
     def play_round(self):
         self.attempts = 10
+
+    def display_feedback(self):
+        pass

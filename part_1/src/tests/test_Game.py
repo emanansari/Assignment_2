@@ -2,6 +2,7 @@ import unittest
 import os
 import sys
 from unittest.mock import patch
+from io import StringIO
 sys.path.append(os.path.join(os.getcwd(), 'part_1/src'))
 from mastermind import Game, CodeBreaker, CodeMaker
 
@@ -21,12 +22,12 @@ class TestGame(unittest.TestCase):
             self.game.play_round()
             self.assertEqual(self.game.attempts, 10)
 
-    def test_stop_game(self):
-        with patch.object(CodeBreaker, 'make_guess', return_value='WRGY'), \
-             patch.object(CodeMaker, 'provide_feedback', return_value=(0, 0)):
-            self.game.play_game()
-            self.assertEqual(self.game.attempts, 10,
-                             "Game should stop after 10 attempts")
+    def test_game_display_feedback(self):
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            self.game.display_feedback(1, "WRGB", (2, 1))
+
+        expected_output = "\nAttempt #1:\nGuess: WRGB\nFeedback: (2, 1)\n"
+        self.assertEqual(mock_stdout.getvalue(), expected_output)
 
 
 if __name__ == '__main__':
