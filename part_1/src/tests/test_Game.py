@@ -29,6 +29,24 @@ class TestGame(unittest.TestCase):
         expected_output = "\nAttempt #1:\nGuess: WRGB\nFeedback: (2, 1)\n"
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
+    def test_game_play_codebreaker_wins(self):
+        with patch('builtins.input', side_effect=['WRGB']):
+            self.code_maker.code = 'WRGB'
+            with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+                self.game.play()
+
+            expected_output = "Codebreaker cracked the code! You win!"
+            self.assertIn(expected_output, mock_stdout.getvalue())
+
+    def test_game_play_codebreaker_loses(self):
+        with patch('builtins.input', side_effect=['AAAA'] * 10):
+            self.code_maker.code = 'WRGB'
+            with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+                self.game.play()
+
+            expected_output = "Max attempts reached, correct code is: WRGB"
+            self.assertIn(expected_output, mock_stdout.getvalue())
+
 
 if __name__ == '__main__':
     unittest.main()
