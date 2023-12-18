@@ -28,7 +28,7 @@ class TestCodeMaker(unittest.TestCase):
         code_maker.code = ['R', 'Y', 'Y', 'R']
         guess = ['R', 'G', 'B', 'Y']
         feedback = code_maker.provide_feedback(guess)
-        expected_feedback = (1, 0)
+        expected_feedback = (1, 3)
         feedback_msg = "1 correct guesses at right position, 3 at wrong."
         self.assertEqual(feedback, expected_feedback, feedback_msg)
 
