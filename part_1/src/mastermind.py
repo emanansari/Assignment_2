@@ -33,9 +33,11 @@ class CodeBreaker:
         self.guesses = []
 
     def make_guess(self):
+        valid_colors = "WRGYBX"
         while True:
             guess = input("Guess! (e.g., 'WRGB'): ").upper()
-            if len(guess) == 4:
+            if all(color in valid_colors for
+                   color in guess) and len(guess) == 4:
                 return guess
             else:
                 print("Guess is too long!")
