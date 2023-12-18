@@ -16,8 +16,6 @@ class TestGame(unittest.TestCase):
         self.assertIsInstance(self.game.code_breaker, CodeBreaker)
         self.assertEqual(self.game.attempts, 0)
 
-    
-
 
 if __name__ == '__main__':
     unittest.main()

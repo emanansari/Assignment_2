@@ -45,4 +45,6 @@ class CodeBreaker:
 
 class Game:
     def __init__(self):
-        raise NotImplementedError("Constructor not implemented")
+        self.code_maker = CodeMaker()
+        self.code_breaker = CodeBreaker()
+        self.attempts = 0
