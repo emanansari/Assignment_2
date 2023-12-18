@@ -34,9 +34,10 @@ class CodeBreaker:
 
     def make_guess(self):
         while True:
-            user_input = input("Guess! (e.g., 'WRGB'): ").upper()
-            if len(user_input) == 4:
-                return user_input
+            guess = input("Guess! (e.g., 'WRGB'): ").upper()
+            if len(guess) == 4:
+                self.guesses.append(guess)
+                return guess
             else:
                 print("Guess is too long!")
 
