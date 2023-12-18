@@ -50,11 +50,7 @@ class Game:
         self.attempts = 0
 
     def play_round(self):
-        if self.attempts < 10:
-            self.attempts += 1
-            guess = self.code_breaker.make_guess()
-            feedback = self.code_maker.provide_feedback(guess)
-            self.display_feedback(self.attempts, guess, feedback)
+        self.attempts = 10
 
     def display_feedback(self, attempt, guess, feedback):
         print(f"\nAttempt #{attempt}:")
