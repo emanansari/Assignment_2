@@ -29,7 +29,13 @@ class CodeMaker:
 
 
 class CodeBreaker:
-    pass
+    def __init__(self) -> None:
+        self.guesses = []
+
+    def make_guess(self) -> str:
+        guess = input("Guess!(e.g., 'WRGY'): ").strip().upper()
+        self.guesses.append(guess)
+        return guess
 
 
 class Game:
