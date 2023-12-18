@@ -20,7 +20,7 @@ class TestCodeBreaker(unittest.TestCase):
     def test_make_guess_valid_characters(self):
         valid_characters = "WRGYBX"
         code_breaker = CodeBreaker()
-        with patch('builtins.input', side_effect=['AAAA']):
+        with patch('builtins.input', side_effect=['WXRY']):
             guess = code_breaker.make_guess()
         result = all(char in valid_characters for char in guess)
         self.assertTrue(result)
