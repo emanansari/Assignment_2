@@ -30,12 +30,10 @@ class CodeMaker:
 
 class CodeBreaker:
     def __init__(self) -> None:
-        self.guesses = []
+        raise NotImplementedError("Initialization not implemented.")
 
     def make_guess(self) -> str:
-        guess = input("Guess!(e.g., 'WRGY'): ").strip().upper()
-        self.guesses.append(guess)
-        return guess
+        pass
 
 
 class Game:
