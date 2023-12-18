@@ -32,10 +32,13 @@ class CodeBreaker:
     def __init__(self) -> None:
         self.guesses = []
 
-    def make_guess(self) -> str:
-        guess = input("Guess!(e.g., 'WRGY'): ").strip().upper()
-        self.guesses.append(guess)
-        return guess
+    def make_guess(self):
+        while True:
+            user_input = input("Guess! (e.g., 'WRGB'): ").upper()
+            if len(user_input) == 4:
+                return user_input
+            else:
+                print("Guess is too long!")
 
 
 class Game:
