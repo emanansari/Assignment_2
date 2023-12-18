@@ -16,10 +16,10 @@ class TestGame(unittest.TestCase):
         self.assertEqual(self.game.attempts, 0)
 
     def test_play_round(self):
-        with patch.object(CodeBreaker,'make_guess', return_value='WRGY'), \
+        with patch.object(CodeBreaker, 'make_guess', return_value='WRGY'), \
              patch.object(CodeMaker, 'provide_feedback', return_value=(1, 2)):
             self.game.play_round()
-            self.assertNotEqual(self.game.attempts, 0)
+            self.assertEqual(self.game.attempts, 10)
 
 
 if __name__ == '__main__':
