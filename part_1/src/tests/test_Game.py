@@ -21,6 +21,13 @@ class TestGame(unittest.TestCase):
             self.game.play_round()
             self.assertEqual(self.game.attempts, 10)
 
+    def test_stop_game(self):
+        with patch.object(CodeBreaker, 'make_guess', return_value='WRGY'), \
+             patch.object(CodeMaker, 'provide_feedback', return_value=(0, 0)):
+            self.game.play_game()
+            self.assertEqual(self.game.attempts, 10,
+                             "Game should stop after 10 attempts")
+
 
 if __name__ == '__main__':
     unittest.main()
