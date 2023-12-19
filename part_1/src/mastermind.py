@@ -37,7 +37,8 @@ class CodeBreaker:
         valid_colors: str = "WRGYBX"
         while True:
             guess: str = input("Guess! (e.g., 'WRGB'): ").upper()
-            if all(color in valid_colors for color in guess) and len(guess) == 4:  # can you fix line too long error here
+            if all(color in valid_colors for color in guess) and \
+                    + len(guess) == 4:
                 return guess
             else:
                 print("Guess is too long!")
