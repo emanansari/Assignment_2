@@ -70,7 +70,11 @@ For this part of the assignment we decided to use Marco's solutions to assignmen
 Both the classes, MultiLinearRegression and ModelSaver now inherit from the abstract MLModel that was asked to create. TypeError is raised if this input requirement is not met. 
 
 2.3
-The classes LassoRegression and RidgeRegression inherit from the class MultipleLinearRegression. Using the MultipleLinearRegression as base class we then override the train methods. Based on the equations given (5 and 7) in the assignment gradient descent is calculated for each class. Both of them follow a similar structure to override the _initialize_parameters and train methods, and then they adapt them to their specific for methods. The train method performs iterative gradient descent, where in each iteration it will calculaet the predictions,  the loss and mean absolute error. This information is then logged and updated with the parameters that is computed using gradient descent. 
+The classes LassoRegression and RidgeRegression inherit from the class MultipleLinearRegression. Using the MultipleLinearRegression as base class we then override the train methods. Based on the equations given (5 and 7) in the assignment gradient descent is calculated for each class. Both of them follow a similar structure to override the _initialize_parameters and train methods, and then they adapt them to their specific for methods. 
+
+The __init__ method initializes the public attributes like alpha (learning rate), iterations, and lambda_param. The _initialize_parameters method sets the initial weights either using a uniform or normal distribution as per the chosen strategy.
+
+The train method performs iterative gradient descent, where in each iteration it will calculaet the predictions, the loss and mean absolute error. This information asked in the assignment are logged and updated with the parameters that is computed using gradient descent. 
 
 The solutions from assignment 1 (the ModelSaver and RegressionPlotter classes were edited to work for the implementation) 
 
